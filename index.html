@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Telecommunication - Advanced Communications Solutions</title>
+    <meta name="description"
+        content="Professional telecommunication services with VoIP solutions, business phone systems, and 24/7 support. Reliable communication for businesses and individuals.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Proactive Telecommunication - Advanced Communications Solutions">
+    <meta property="og:description"
+        content="Professional telecommunication services with VoIP solutions, business phone systems, and 24/7 support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proactive-telecom.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #fff, #ccc);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-brand i {
+            font-size: 1.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ccc;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8));
+        }
+
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.05));
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .float-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .float-3 {
+            width: 80px;
+            height: 80px;
+            top: 80%;
+            left: 70%;
+            animation-delay: 4s;
+        }
+
+        .float-4 {
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            right: 40%;
+            animation-delay: 6s;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .typewriter {
+            color: #fff;
+        }
+
+        .cursor {
+            color: #fff;
+            animation: blink 1s infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        .btn-outline:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 0;
+            background: #111;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            color: #000;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .service-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.4),
+                    transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #333;
+        }
+
+        .feature-item i {
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #222, #111);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            transition: all 0.6s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .stat-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .stat-suffix {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+        }
+
+        /* Product Showcase Section */
+        .products-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #111, #000);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .product-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .product-image {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #222, #111);
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: linear-gradient(45deg, #333, #555);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .feature-tag:hover {
+            background: linear-gradient(45deg, #555, #777);
+            transform: translateY(-2px);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #000, #222);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: #fff;
+            color: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .pricing-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: #fff;
+            padding: 0.5rem 3rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            z-index: 10;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-20px) scale(1.08);
+            box-shadow: 0 25px 50px rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, #000, #333);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .pricing-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .pricing-features {
+            padding: 2rem;
+        }
+
+        .pricing-features .feature-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-features .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features .feature-item.included i {
+            color: #28a745;
+        }
+
+        .pricing-features .feature-item.excluded i {
+            color: #dc3545;
+        }
+
+        .pricing-features .feature-item.excluded {
+            opacity: 0.6;
+        }
+
+        .pricing-features .feature-item.excluded span {
+            text-decoration: line-through;
+        }
+
+        .pricing-card .btn {
+            margin: 0 2rem 2rem 2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #111, #000);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #ccc;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #fff, #ccc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .footer-brand p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #fff, #ccc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .social-link.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.2);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            color: #fff;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            color: #000;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .fade-in-up.delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .fade-in-up.delay-2 {
+            animation-delay: 1s;
+        }
+
+        .fade-in-up.delay-3 {
+            animation-delay: 1.5s;
+        }
+
+        /* AOS (Animate On Scroll) Classes */
+        [data-aos] {
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        [data-aos="fade-up"] {
+            transform: translateY(30px);
+        }
+
+        [data-aos="fade-up"].aos-animate {
+            transform: translateY(0);
+        }
+
+        [data-aos="fade-left"] {
+            transform: translateX(50px);
+        }
+
+        [data-aos="fade-left"].aos-animate {
+            transform: translateX(0);
+        }
+
+        [data-aos="fade-right"] {
+            transform: translateX(-50px);
+        }
+
+        [data-aos="fade-right"].aos-animate {
+            transform: translateX(0);
+        }
+
+        [data-aos="zoom-in"] {
+            transform: scale(0.8);
+        }
+
+        [data-aos="zoom-in"].aos-animate {
+            transform: scale(1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .nav-toggle.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .service-card,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-phone"></i>
+                <span>Proactive Telecom</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="float-element float-1"></div>
+            <div class="float-element float-2"></div>
+            <div class="float-element float-3"></div>
+            <div class="float-element float-4"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span id="typewriter-text" class="typewriter"></span>
+                    <span class="cursor" id="cursor">|</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up delay-2">
+                    Reliable, high-quality telephone services for businesses and individuals with cutting-edge
+                    technology.
+                </p>
+                <div class="hero-buttons fade-in-up delay-3">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('services')">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Our Premium Services</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Experience the future of communication with our advanced solutions
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3 class="service-title">VoIP Solutions</h3>
+                    <p class="service-description">
+                        Crystal-clear voice calls over the internet with advanced features like call forwarding,
+                        voicemail, and conference calling.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>HD Voice Quality</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">Business Phone Systems</h3>
+                    <p class="service-description">
+                        Scalable phone systems tailored for businesses of all sizes, with multi-line support and
+                        advanced conferencing capabilities.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Multi-line Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>CRM Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">24/7 Premium Support</h3>
+                    <p class="service-description">
+                        Round-the-clock customer support with dedicated account managers to ensure your communication
+                        needs are always met.
+                    </p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Instant Response</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Expert Technicians</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number" data-target="99.9">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-suffix">/7</div>
+                    <div class="stat-label">Hour Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Professional Phone Systems</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Discover our range of advanced Yealink phone systems designed for modern businesses
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="./1.png" alt="Yealink T54W Professional Phone" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Yealink T54W</h3>
+                        <p class="product-description">Professional IP phone with color display, ideal for executives
+                            and managers</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Color Display</span>
+                            <span class="feature-tag">Wi-Fi Support</span>
+                            <span class="feature-tag">HD Audio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="./2.png" alt="Yealink T34W Business Phone" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Yealink T34W</h3>
+                        <p class="product-description">Feature-rich business phone with intuitive interface and wireless
+                            connectivity</p>
+                        <div class="product-features">
+                            <span class="feature-tag">LCD Display</span>
+                            <span class="feature-tag">Wireless</span>
+                            <span class="feature-tag">Multi-line</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-image">
+                        <img src="./3.png" alt="Yealink W76P DECT Phone" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Yealink W76P</h3>
+                        <p class="product-description">DECT cordless phone system perfect for mobility and flexible
+                            office environments</p>
+                        <div class="product-features">
+                            <span class="feature-tag">DECT Technology</span>
+                            <span class="feature-tag">Cordless</span>
+                            <span class="feature-tag">Long Range</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Choose Your Plan</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Flexible pricing options designed to grow with your business
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="pricing-title">Starter Plan</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">19.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Voicemail</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Call Forwarding</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Auto Attendant</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Call Recording</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Mobile App</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>CRM Integration</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Conference Calling</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Analytics Dashboard</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="scrollToSection('contact')">
+                        Choose Starter
+                    </button>
+                </div>
+
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="pricing-title">Pro Plan</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">39.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Voicemail</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Call Forwarding</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Auto Attendant</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>Call Recording</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Mobile App</span>
+                        </div>
+                        <div class="feature-item excluded">
+                            <i class="fas fa-times"></i>
+                            <span>CRM Integration</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Conference Calling</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Analytics Dashboard</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                        Choose Pro
+                    </button>
+                </div>
+
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="pricing-title">Enterprise Plan</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">79.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Voicemail</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Call Forwarding</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Auto Attendant</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Call Recording</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Mobile App</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>CRM Integration</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Conference Calling</span>
+                        </div>
+                        <div class="feature-item included">
+                            <i class="fas fa-check"></i>
+                            <span>Analytics Dashboard</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="scrollToSection('contact')">
+                        Choose Enterprise
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Ready to transform your communication? Let's discuss your needs.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form" data-aos="fade-right">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Tell us about your communication needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info" data-aos="fade-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+44 1234 567890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p>info@proactivetelecom.co.uk<br>support@proactivetelecom.co.uk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-phone"></i>
+                        <span>Proactive Telecom</span>
+                    </div>
+                    <p>Revolutionizing communication with cutting-edge technology and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">VoIP Solutions</a></li>
+                            <li><a href="#services">Business Systems</a></li>
+                            <li><a href="#services">24/7 Support</a></li>
+                            <li><a href="#services">Consulting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#home">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">System Status</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Proactive Telecommunication. All rights reserved. Built with passion for communication
+                    excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let particles = [];
+        let mouse = { x: null, y: null };
+        let isAnimating = false;
+
+        // DOM Elements
+        const navbar = document.getElementById('navbar');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        const scrollProgress = document.getElementById('scroll-progress');
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            initParticleSystem();
+            initScrollEffects();
+            initMobileNavigation();
+            initTypewriter();
+            initContactForm();
+            initAOS();
+            initSmoothScrolling();
+        });
+
+        // Particle System
+        function initParticleSystem() {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Particle class
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = (Math.random() - 0.5) * 1;
+                    this.speedY = (Math.random() - 0.5) * 1;
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    // Bounce off edges
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+                    // Mouse interaction
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            const force = (100 - distance) / 100;
+                            this.x += (dx / distance) * force * 2;
+                            this.y += (dy / distance) * force * 2;
+                        }
+                    }
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            // Create particles
+            for (let i = 0; i < 120; i++) {
+                particles.push(new Particle());
+            }
+
+            // Draw connections between particles
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 150) {
+                            const opacity = (150 - distance) / 150 * 0.3;
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+
+                drawConnections();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // Mouse events
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            canvas.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+        }
+
+        // Scroll Effects
+        function initScrollEffects() {
+            let ticking = false;
+
+            function updateScrollEffects() {
+                const scrolled = window.pageYOffset;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrolled / maxScroll) * 100;
+
+                // Update scroll progress bar
+                if (scrollProgress) {
+                    scrollProgress.style.width = scrollPercent + '%';
+                }
+
+                // Update navbar
+                if (navbar) {
+                    if (scrolled > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                }
+
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollEffects);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick);
+        }
+
+        // Mobile Navigation
+        function initMobileNavigation() {
+            if (mobileMenu && navMenu) {
+                mobileMenu.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        }
+
+        // Typewriter Effect
+        function initTypewriter() {
+            const typewriterElement = document.getElementById('typewriter-text');
+            const cursor = document.getElementById('cursor');
+
+            if (!typewriterElement) return;
+
+            const text = 'Welcome to Proactive Telecommunication';
+            let index = 0;
+
+            function typeWriter() {
+                if (index < text.length) {
+                    typewriterElement.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 80);
+                } else {
+                    // Hide cursor after typing is complete
+                    setTimeout(() => {
+                        if (cursor) cursor.style.display = 'none';
+                    }, 1000);
+                }
+            }
+
+            // Start typing after a delay
+            setTimeout(typeWriter, 1000);
+        }
+
+        // Animated Counters
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = Math.floor(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Animate on Scroll (AOS) Implementation
+        function initAOS() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const delay = element.getAttribute('data-aos-delay') || 0;
+
+                        setTimeout(() => {
+                            element.classList.add('aos-animate');
+
+                            // Animate counters if they're in the stats section
+                            if (element.classList.contains('stat-item')) {
+                                const numberElement = element.querySelector('.stat-number');
+                                if (numberElement) {
+                                    const target = parseFloat(numberElement.getAttribute('data-target'));
+                                    animateCounter(numberElement, target);
+                                }
+                            }
+
+                            // Animate service cards
+                            if (element.classList.contains('service-card')) {
+                                element.classList.add('animate');
+                            }
+
+                            // Animate product cards
+                            if (element.classList.contains('product-card')) {
+                                element.classList.add('animate');
+                            }
+
+                            // Animate pricing cards
+                            if (element.classList.contains('pricing-card')) {
+                                element.classList.add('animate');
+                            }
+
+                            // Animate social links
+                            if (element.classList.contains('social-link')) {
+                                element.classList.add('animate');
+                            }
+                        }, delay);
+
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with data-aos attribute
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Also observe elements with specific animation classes
+            document.querySelectorAll('.service-card, .product-card, .pricing-card, .stat-item, .social-link').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Scroll to Section Function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const offsetTop = element.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Contact Form
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            const modal = document.getElementById('success-modal');
+
+            if (!form) return;
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                // Show success modal
+                if (modal) {
+                    modal.classList.add('show');
+                }
+
+                // Reset form
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+
+        // Close Modal
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Enhanced Button Hover Effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn-primary');
+
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Parallax Effect for Floating Elements
+        function initParallax() {
+            const floatingElements = document.querySelectorAll('.float-element');
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+
+                floatingElements.forEach((element, index) => {
+                    const speed = (index + 1) * 0.3;
+                    element.style.transform = `translateY(${rate * speed}px)`;
+                });
+            });
+        }
+
+        // Initialize parallax when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initParallax);
+
+        // Performance optimization: Throttle scroll events
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply throttling to scroll-heavy functions
+        const throttledScrollHandler = throttle(() => {
+            // Handle scroll-based animations here if needed
+        }, 16); // ~60fps
+
+        window.addEventListener('scroll', throttledScrollHandler);
+
+        // Preload animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 500);
+        });
+
+        // Enhanced form validation
+        function validateForm(form) {
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#ff4444';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                }
+            });
+
+            return isValid;
+        }
+
+        // Add input event listeners for real-time validation
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('input', function () {
+                        if (this.value.trim()) {
+                            this.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                        }
+                    });
+                });
+            }
+        });
+
+        // Loading screen (optional)
+        function showLoadingScreen() {
+            const loader = document.createElement('div');
+            loader.id = 'loading-screen';
+            loader.innerHTML = `
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    `;
+            loader.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        transition: opacity 0.5s ease;
+    `;
+
+            document.body.appendChild(loader);
+
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        document.body.removeChild(loader);
+                    }, 500);
+                }, 1000);
+            });
+        }
+
+        // Uncomment to enable loading screen
+        // showLoadingScreen();
+    </script>
+</body>
+
+</html>
