@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Proactive Telecommunication</title>
+    <meta name="description"
+        content="Privacy Policy for Proactive Telecommunication - How we collect, use, and protect your personal data.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-brand i {
+            font-size: 1.2rem;
+        }
+
+        .back-link {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 100px;
+            padding: 4rem 0;
+            min-height: calc(100vh - 100px);
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .privacy-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .privacy-subtitle {
+            font-size: 1.125rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-dates {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+        }
+
+        .contact-box h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            color: #ccc;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #fff;
+            margin: 1rem 0;
+        }
+
+        .highlight strong {
+            color: #fff;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .footer-brand p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            color: #fff;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        .company-info {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-info p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .company-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .company-info strong {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 2rem;
+            }
+
+            .privacy-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.25rem;
+            }
+
+            .section h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .privacy-content {
+                padding: 1.5rem;
+            }
+
+            .privacy-title {
+                font-size: 1.75rem;
+            }
+
+            .contact-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <i class="fas fa-phone"></i>
+                <span>Proactive Telecom</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="privacy-header">
+                <h1 class="privacy-title">Privacy Policy</h1>
+                <p class="privacy-subtitle">How we collect, use, and protect your personal data</p>
+                <div class="privacy-dates">
+                    <p>Effective Date: January 1, 2025</p>
+                    <p>Last Updated: January 1, 2025</p>
+                </div>
+            </div>
+
+            <div class="privacy-content">
+                <div class="section">
+                    <p>PROACTIVE TECHNOLOGY GROUP LTD ("we", "us", or "our") is committed to protecting and respecting
+                        your privacy. This Privacy Policy explains how we collect, use, and protect your personal data,
+                        in line with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act
+                        2018.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Who We Are</h2>
+                    <div class="contact-box">
+                        <h3>Data Controller:</h3>
+                        <div class="contact-info">
+                            <p><strong>PROACTIVE TECHNOLOGY GROUP LTD</strong></p>
+                            <p>South West Durham Business Centre</p>
+                            <p>Dabble Duck Industrial Estate</p>
+                            <p>Shildon, County Durham</p>
+                            <p>DL1 2QN, United Kingdom</p>
+                            <p>Company Number: 15582156</p>
+                            <p>Email: compliance@proactivetelecom.co.uk</p>
+                            <p>Phone: +44 330 341 0170</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>What Personal Data We Collect</h2>
+                    <p>We may collect and process the following types of personal data:</p>
+                    <ul>
+                        <li><strong>Identity Data</strong> – name, job title, company name</li>
+                        <li><strong>Contact Data</strong> – email address, phone number, postal address</li>
+                        <li><strong>Technical Data</strong> – IP address, browser type/version, device information</li>
+                        <li><strong>Usage Data</strong> – website interaction, page views, referral sources</li>
+                        <li><strong>Communication Data</strong> – correspondence you send to us</li>
+                        <li><strong>Marketing Preferences</strong> – opt-in preferences for communications</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>How We Collect Your Data</h2>
+                    <ul>
+                        <li>Directly from you (e.g. contact forms, service enquiries, support requests)</li>
+                        <li>Automatically via website analytics tools and cookies</li>
+                        <li>From third parties (e.g. service partners, referral sources)</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Legal Bases for Processing</h2>
+                    <p>We process personal data under the following lawful bases:</p>
+                    <ul>
+                        <li><strong>Consent</strong> – when you've given us permission (e.g. marketing)</li>
+                        <li><strong>Contract</strong> – to fulfil a contract or respond to service requests</li>
+                        <li><strong>Legal Obligation</strong> – when required by law</li>
+                        <li><strong>Legitimate Interests</strong> – for administrative, operational or marketing
+                            purposes (without overriding your rights)</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>How We Use Your Data</h2>
+                    <ul>
+                        <li>To provide products or services to you</li>
+                        <li>To respond to enquiries and provide customer support</li>
+                        <li>To maintain and improve our website and services</li>
+                        <li>To send you marketing communications (where consent is given)</li>
+                        <li>To comply with legal obligations</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Sharing Your Data</h2>
+                    <p>We do not sell your data. We may share it with:</p>
+                    <ul>
+                        <li>Website and hosting providers</li>
+                        <li>Email and CRM service providers</li>
+                        <li>Legal and professional advisers</li>
+                        <li>Law enforcement or regulators (if required by law)</li>
+                    </ul>
+                    <p>All partners are required to adhere to data protection laws.</p>
+                </div>
+
+                <div class="section">
+                    <h2>International Transfers</h2>
+                    <p>If we transfer your data outside the UK, we ensure appropriate safeguards are in place, such as
+                        Standard Contractual Clauses or adequacy decisions.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Data Retention</h2>
+                    <p>We retain personal data only as long as necessary for the purpose it was collected, or as
+                        required by law. Data is securely deleted when no longer needed.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Your Data Protection Rights</h2>
+                    <p>Under UK GDPR, you have the right to:</p>
+                    <ul>
+                        <li>Access your personal data</li>
+                        <li>Correct or update inaccurate data</li>
+                        <li>Request erasure of your data ("right to be forgotten")</li>
+                        <li>Restrict or object to processing</li>
+                        <li>Request data portability</li>
+                        <li>Withdraw consent at any time</li>
+                        <li>Lodge a complaint with the Information Commissioner's Office (ICO)</li>
+                    </ul>
+                    <div class="highlight">
+                        <p><strong>To exercise any of these rights, contact us at:</strong>
+                            compliance@proactivetelecom.co.uk</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Cookies</h2>
+                    <p>Our website uses cookies to improve your experience and collect anonymised analytics data. You
+                        can manage cookies through your browser or via our cookie banner. For details, see our Cookie
+                        Policy.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Data Security</h2>
+                    <p>We take steps to secure your data using:</p>
+                    <ul>
+                        <li>Encryption (SSL/TLS)</li>
+                        <li>Access controls and user authentication</li>
+                        <li>Secure hosting and firewall protection</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page and,
+                        where appropriate, notified by email or site banner.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Contact Us</h2>
+                    <p>For any queries or requests regarding this policy or your personal data, please contact:</p>
+                    <div class="contact-box">
+                        <div class="contact-info">
+                            <p><strong>PROACTIVE TECHNOLOGY GROUP LTD</strong></p>
+                            <p>South West Durham Business Centre</p>
+                            <p>Dabble Duck Industrial Estate</p>
+                            <p>Shildon, County Durham</p>
+                            <p>DL1 2QN, United Kingdom</p>
+                            <p>Email: compliance@proactivetelecom.co.uk</p>
+                            <p>Phone: +44 330 341 0170</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-phone"></i>
+                        <span>Proactive Telecom</span>
+                    </div>
+                    <p>Revolutionizing communication with cutting-edge technology and exceptional service.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">VoIP Solutions</a></li>
+                            <li><a href="index.html#services">Business Systems</a></li>
+                            <li><a href="index.html#services">24/7 Support</a></li>
+                            <li><a href="index.html#services">Consulting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#home">About Us</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="company-info">
+                    <p><strong>PROACTIVE TECHNOLOGY GROUP LTD</strong></p>
+                    <p>Company number: 15582156</p>
+                    <p>Registered office address: Hackworth Accounting Limited South West Durham Business Centre, Dabble
+                        Duck Industrial Estate, Shildon, Shildon, County Durham, DL1 2QN</p>
+                </div>
+                <p>&copy; 2025 Proactive Telecommunication. All rights reserved. Built with passion for communication
+                    excellence.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
